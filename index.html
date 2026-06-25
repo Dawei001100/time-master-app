@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英语学习助手</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <p class="eyebrow">Beginner English Helper</p>
+      <h1>英语学习助手</h1>
+      <p class="intro">每天学几个简单单词，先理解，再测试，慢慢建立英语信心。</p>
+    </header>
+
+    <section class="panel progress-panel" aria-label="学习进度">
+      <div>
+        <span class="label">学习进度</span>
+        <strong id="progress-text">已学习 0 / 20</strong>
+      </div>
+      <div>
+        <span class="label">复习列表</span>
+        <strong id="review-count">0 个</strong>
+      </div>
+    </section>
+
+    <nav class="mode-tabs" aria-label="学习模式切换">
+      <button id="study-mode-button" class="tab-button active" type="button">学习模式</button>
+      <button id="test-mode-button" class="tab-button" type="button">测试模式</button>
+    </nav>
+
+    <section id="study-section" class="panel word-card" aria-label="单词学习卡片">
+      <p class="card-number" id="card-number">第 1 个单词</p>
+      <h2 id="word-text">apple</h2>
+      <p class="meaning" id="meaning-text">苹果</p>
+      <div class="example-box">
+        <p id="example-text">I eat an apple every morning.</p>
+        <p id="example-meaning-text">我每天早上吃一个苹果。</p>
+      </div>
+
+      <div class="button-row">
+        <button id="know-button" class="secondary-button" type="button">认识</button>
+        <button id="unknown-button" class="warning-button" type="button">不认识</button>
+        <button id="next-button" class="primary-button" type="button">下一个单词</button>
+      </div>
+    </section>
+
+    <section id="test-section" class="panel test-card hidden" aria-label="单词测试模式">
+      <p class="label">根据中文意思输入英文单词</p>
+      <h2 id="test-meaning-text">苹果</h2>
+      <input id="answer-input" type="text" placeholder="请输入英文单词" autocomplete="off">
+      <div class="button-row">
+        <button id="check-answer-button" class="primary-button" type="button">检查答案</button>
+        <button id="test-next-button" class="secondary-button" type="button">下一题</button>
+      </div>
+      <p id="answer-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <section class="panel review-panel" aria-label="复习列表">
+      <h2>需要复习的单词</h2>
+      <p class="small-text">点击“不认识”的单词会自动出现在这里。</p>
+      <ul id="review-list" class="review-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
